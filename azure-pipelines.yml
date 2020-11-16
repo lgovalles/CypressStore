@@ -17,5 +17,5 @@ steps:
 
 - script: |
     npm install cypress --save-dev
-    cypress run
+    npm cypress run
   displayName: 'npm install and build'
