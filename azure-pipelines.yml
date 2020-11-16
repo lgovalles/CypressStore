@@ -15,7 +15,23 @@ steps:
     versionSpec: '10.x'
   displayName: 'Install Node.js'
 
+# Install Node dependencies
+- script: npm ci
+  displayName: 'Install NPM dependencies'
+
+- script: npm run cy:verify
+  displayName: 'Cypress verify'
+
+- script: npm run cy:info
+  displayName: 'Cypress info'
+
 - script: |
-    npm install cypress --save-dev
-    npx cypress run
-  displayName: 'npm install and build'
+    npx print-env AGENT
+    npx print-env BUILD
+    npx print-env SYSTEM
+    npm run start:ci:windows &
+    npx cypress run --record --parallel --ci-build-id $BUILD_BUILDNUMBER --group "Azure CI"
+  displayName: 'Run Cypress tests'
+  env:
+    # avoid warnings about terminal
+    TERM: xterm
