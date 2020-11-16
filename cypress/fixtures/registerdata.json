@@ -1,0 +1,22 @@
+{
+    "newemail":"testrp@test.com",
+    "gender":"1",
+    "firstname":"User Test",
+    "lastname":"RealPage",
+    "passwd":"A123456",
+    "days":"1",
+    "months":"4",
+    "years":"1984",
+    "newsletter":"1",
+    "optin":"1",
+    "company":"RP",
+    "address1":"asdfs,asdfas,asdf",
+    "address2":"",
+    "city":"MED",
+    "country":"21",
+    "state":"Arkansas",
+    "postcode":"05001",
+    "other":"",
+    "phone":"123-456-7899",
+    "mobile":"123-4567-456"
+}

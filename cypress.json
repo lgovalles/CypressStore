@@ -1,0 +1,5 @@
+{
+    "baseUrl":"http://automationpractice.com/",
+    "experimentalSourceRewriting": true,
+    "testFiles": "**/*.feature"
+}
