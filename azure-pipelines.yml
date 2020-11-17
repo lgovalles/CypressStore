@@ -26,16 +26,18 @@ steps:
       path: /home/vsts/.cache/Cypress
       restoreKeys: cypress | $(Agent.OS) | package-lock.json
   displayName: Cache Cypress binary
+  
+# Install Node dependencies
+- script: npm ci
+  displayName: 'Install NPM dependencies'
 
-- script: |
-    npm install
-    npm run build
-  displayName: 'npm install and build'
-
-- script: npm run cy:verify
+- script: npx cypress verify
   displayName: 'Cypress Verify'
 
 - script: |
+    npx print-env AGENT
+    npx print-env BUILD
+    npx print-env SYSTEM
     npx cypress run
   displayName: 'Run Cypress tests'
   env:
