@@ -27,11 +27,6 @@ steps:
       restoreKeys: cypress | $(Agent.OS) | package-lock.json
   displayName: Cache Cypress binary
 
-- script: |
-    npm install
-    npm run build
-  displayName: 'npm install and build'
-
 - script: npm run cy:verify
   displayName: 'Cypress Verify'
 
