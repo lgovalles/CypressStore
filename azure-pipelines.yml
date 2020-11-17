@@ -36,10 +36,7 @@ steps:
   displayName: 'Cypress Verify'
 
 - script: |
-    npx print-env AGENT
-    npx print-env BUILD
-    npx print-env SYSTEM
-    npm run start & npm run cy:test
+    npx cypress run
   displayName: 'Run Cypress tests'
   env:
     # avoid warnings about terminal
