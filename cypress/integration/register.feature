@@ -11,6 +11,7 @@ Feature: User Creates an account
         Then the user is taken my account page
 
     Scenario: user can log in account
+
         Given the user has a valid account
         Then the clicks on sign in
         And enters email

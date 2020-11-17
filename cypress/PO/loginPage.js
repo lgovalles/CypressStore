@@ -44,7 +44,7 @@ class LopingPage extends Common{
         pass_input.type(this.passws)
     }
 
-    assserLogin(){
+    asserLogin(){
         cy.url().should('include', 'my-account')
         cy.get("span.navigation_page").should("contain","My account")
         cy.get("h1.page-heading").should("be.visible")
@@ -53,6 +53,11 @@ class LopingPage extends Common{
     clickOnSignOut(){
         const logout = cy.get("a.logout")
         logout.click()
+    }
+
+    assertDuplicateEmail(){
+        const assetemail = cy.get("#create_account_error")
+        assetemail.should("be.visible").and("contain","An account using this email address has already been registered")
     }
 }
 

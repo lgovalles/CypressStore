@@ -9,7 +9,28 @@ before(()=>{
 })
 
 afterEach(()=>{
-    login.clickOnSignOut()
+    console.log("AfterEach")
+})
+
+//Duplicate email
+Given('The user is on Homepage', () => {
+    main.visit()
+})
+
+When('the user clicks on Sign in', () => {
+    main.clickOnLogin();
+})
+
+And("user enters a duplicate email",()=>{
+    login.typeNewEmail()
+}) 
+
+And('User Clicks create an account',()=>{
+    login.clickOnCreateAccount()
+})
+
+Then("the system shows an error",()=>{
+    login.assertDuplicateEmail()
 })
 
 // Login
@@ -29,5 +50,5 @@ And("clicks sign in",()=>{
     login.clickOnSingIn()
 }) 
 Then("the user is successfully logged in",()=>{
-    login.assserLogin()
+    login.asserLogin()
 }) 

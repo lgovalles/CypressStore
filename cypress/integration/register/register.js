@@ -31,7 +31,6 @@ And('user enters email',()=>{
 
 And('User Clicks create an account',()=>{
     register.clickOnCreateAccount()
-    
 })
 
 And('User fills sign up form',()=>{
@@ -43,12 +42,12 @@ And('user clicks register',()=>{
 })
 
 Then('the user is taken my account page',()=>{
-    register.assserLogin()
+    register.asserLogin()
 })
 
 //Login 
 Given("the user has a valid account",()=>{
-
+    main.visit()
 }) 
 
 Then("the clicks on sign in",()=>{
@@ -68,5 +67,5 @@ And("clicks sign in",()=>{
 }) 
 
 Then("the user is successfully logged in",()=>{
-    register.assserLogin()
+    register.asserLogin()
 }) 
