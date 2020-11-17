@@ -31,7 +31,13 @@ steps:
 - script: npm ci
   displayName: 'Install NPM dependencies'
 
+- script: npx cypress verify
+  displayName: 'Cypress Verify'
+
 - script: |
+    npx print-env AGENT
+    npx print-env BUILD
+    npx print-env SYSTEM
     npx cypress run
   displayName: 'Run Cypress tests'
   env:
