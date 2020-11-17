@@ -1,5 +1,9 @@
 {
     "baseUrl":"http://automationpractice.com/",
     "experimentalSourceRewriting": true,
-    "testFiles": "**/*.feature"
+    "testFiles": "**/*.feature",
+    "reporter": "junit",
+    "reporterOptions": {
+        "mochaFile": "test/results/e2e-tests-[hash].xml"
+    }
 }
